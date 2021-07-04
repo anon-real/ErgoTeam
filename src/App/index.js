@@ -3,21 +3,15 @@ import React from 'react';
 import '../App.css';
 // import {currentHeight} from "../ergo-related/explorer";
 import Home from "./routes/Home";
+import Sidebar from '../Components/Sidebar';
 
 function App() {
   return (
     <div className="App">
+      <Sidebar/>
       <header className="App-header">
-        <Home/>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+      {/* <Home/> */}
     </div>
   );
 }

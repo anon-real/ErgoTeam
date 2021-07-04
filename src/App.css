@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -26,6 +26,40 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.App-sidebar-container{
+  border-right: #444261 2px solid;
+  width: 100px;
+  top: 2.5vh;
+  bottom: 2.5vh;
+  /* height: 100vh; */
+  position: fixed;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items:center;
+}
+
+.App-sidebar-logo img{
+  width:55px
+}
+
+.App-sidebar-aboutus{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #323149;
+  border-radius:100%;
+  width: 3.5vw;
+  height: 3.5vw;
+}
+
+.App-sidebar-aboutus i{
+  color:white;
+  font-size:1.5rem;
 }
 
 @keyframes App-logo-spin {
