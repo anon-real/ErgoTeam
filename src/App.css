@@ -42,6 +42,21 @@
   justify-content: space-between;
   align-items:center;
 }
+.App-sidebar-container ul{
+  list-style-type: none;
+  padding: 0px;
+}
+
+.App-sidebar-container li{
+  padding:3vh;
+  font-size:2rem;
+  color:#747474;
+}
+
+.App-sidebar-container li .active{
+  color:white;
+}
+
 
 .App-sidebar-logo img{
   width:55px

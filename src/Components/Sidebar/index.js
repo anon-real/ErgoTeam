@@ -10,16 +10,16 @@ export default function Sidebar(){
             <div>
                 <ul>
                     <li>
-                        <i className="fas fa-home"/>
+                        <i className="fas fa-home active"/>
                     </li>
                     <li>
-                        <i className="fas fa-home"/>
+                        <i className="fas fa-user-friends"/>
                     </li>
                     <li>
-                        <i className="fas fa-home"/>
+                        <i className="fas fa-file-alt"/>
                     </li>
                     <li>
-                        <i className="fas fa-home"/>
+                        <i className="fas fa-cog"/>
                     </li>
                 </ul>
             </div>
