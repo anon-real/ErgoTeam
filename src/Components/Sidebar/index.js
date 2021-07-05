@@ -1,5 +1,6 @@
 import React from 'react';
 import Logo from '../../Assets/ErgoLogo.png';
+import IconBulider from '../../Utils/IconBuilder'
 
 export default function Sidebar(){
     return(
@@ -9,8 +10,8 @@ export default function Sidebar(){
             </div>
             <div>
                 <ul>
-                    <li>
-                        <i className="fas fa-home active"/>
+                    <li className="active">
+                        <i className="fas fa-home"/>
                     </li>
                     <li>
                         <i className="fas fa-user-friends"/>
