@@ -18,9 +18,11 @@ export default {
     MuiPaper:{
       root:{
         boxShadow: "none",
-        borderRadius:10,
         backgroundColor:'#262637',
         color:'white'
+      },
+      rounded:{
+        borderRadius:10,
       }
     },
     MuiInput:{
@@ -34,7 +36,8 @@ export default {
             WebkitBoxShadow: "none",
             MozBoxShadow: "none",
             borderRadius:10,
-            backgroundColor:'#262637',
+            backgroundColor:'#1E1D2B',
+            padding:20
         }
     },
     MuiTableCell: {

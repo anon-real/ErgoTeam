@@ -19,12 +19,12 @@ function App() {
   return (
     <Provider store={store}>
       <ThemeProvider theme={applyTheme}>
+      <Router>
         <div className="view-container">
           <Sidebar/>
           <div className="app-container">
             <Header/>
             <div className="app-wrapper">
-              <Router>
                 <Suspense fallback={Loading}>
                   <Switch>
                     <Route exact path="/" component={Home}/>
@@ -32,10 +32,10 @@ function App() {
                     {/* <Route path="*" component={NotFound}/> */}
                   </Switch>
                 </Suspense>
-              </Router>
             </div>
           </div>
         </div>
+        </Router>
       </ThemeProvider>
     </Provider>
   );

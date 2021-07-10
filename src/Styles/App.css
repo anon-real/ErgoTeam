@@ -61,6 +61,11 @@
   cursor: pointer;
 }
 
+.app-sidebar-container a{
+  color:#747474;
+  text-decoration:none
+}
+
 .app-sidebar-container .active{
   color:white;
   cursor: auto;
