@@ -21,7 +21,7 @@ function App() {
               <Suspense fallback={Loading}>
                 <Switch>
                   <Route exact path="/" component={Home}/>
-                  <Route path="/team" component={Team}/>
+                  <Route path="/teams" component={Team}/>
                   {/* <Route path="*" component={NotFound}/> */}
                 </Switch>
               </Suspense>
