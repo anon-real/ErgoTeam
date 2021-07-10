@@ -6,8 +6,8 @@ import CSSTransitionGroup from 'react-addons-css-transition-group';
 
 export default function Sidebar(){
     return(
-        <div className="App-sidebar-container">
-            <div className="App-sidebar-logo">
+        <div className="app-sidebar-container">
+            <div className="app-sidebar-logo">
                 <img src={Logo}/>
             </div>
             <div>
@@ -31,7 +31,7 @@ export default function Sidebar(){
                     </ul>
                 </CSSTransitionGroup>
             </div>
-            <div className="App-sidebar-aboutus">
+            <div className="app-sidebar-aboutus">
                 <i className="fas fa-question"/>
             </div>
         </div>

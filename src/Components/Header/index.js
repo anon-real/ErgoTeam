@@ -17,10 +17,10 @@ const WalletButton = withStyles((theme) => ({
 
 export default function Header(){
     return(
-        <header className="App-header">
+        <header className="app-header">
             <div>
                 <IconButton aria-label="notification">
-                    <i className="mx-2 text-white fas fa-bell"/>
+                    <i className="mx-3 text-white fas fa-bell"/>
                 </IconButton>
                 <WalletButton color="primary">
                     <i className="mx-1 fas fa-wallet"/>

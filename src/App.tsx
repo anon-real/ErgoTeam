@@ -10,7 +10,7 @@ function App() {
       <header className="App-header">
         <MyErgoPage/>
         <a
-          className="App-link"
+          className="app-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
