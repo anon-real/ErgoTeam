@@ -6,7 +6,6 @@ const WalletButton = withStyles((theme) => ({
     root: {
       color: 'white',
       backgroundColor: '#12111C',
-      textTransform: 'none',
       borderRadius:20,
       padding:'0.75rem 1rem',
       '&:hover': {

@@ -6,7 +6,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
+import Card from '@material-ui/core/Card';
 
 const useStyles = makeStyles({
   table: {
@@ -30,27 +30,27 @@ export default function TeamsTable() {
   const classes = useStyles();
 
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Card}>
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+            <TableCell colSpan={1}></TableCell>
+            <TableCell colSpan={3} align="center">Name</TableCell>
+            <TableCell colSpan={1} align="center">Total members</TableCell>
+            <TableCell colSpan={3} align="center">Signature type</TableCell>
+            <TableCell colSpan={3} align="center">Status</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
             <TableRow key={row.name}>
-              <TableCell component="th" scope="row">
+              <TableCell colSpan={1} component="th" scope="row">
                 {row.name}
               </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
+              <TableCell colSpan={3} size="small" align="center">{row.calories}</TableCell>
+              <TableCell colSpan={1} align="center">{row.fat}</TableCell>
+              <TableCell colSpan={3} align="center">{row.carbs}</TableCell>
+              <TableCell colSpan={3} align="center">{row.protein}</TableCell>
             </TableRow>
           ))}
         </TableBody>

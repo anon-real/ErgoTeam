@@ -6,29 +6,37 @@ import Sidebar from '../Components/Sidebar';
 import Header from '../Components/Header';
 import store from "../Storage/Config/ConfigureStore";
 import Loading from '../Components/Loading'
+import {ThemeProvider} from '@material-ui/styles';
+import {createMuiTheme} from '@material-ui/core/styles';
+import DarkTheme from '../Styles/MaterialThemes/DarkTheme'
+
+const applyTheme = createMuiTheme(DarkTheme);
+
 const Home = lazy(() => import('./routes/Home'));
 const Team = lazy(() => import('./routes/Team'));
 
 function App() {
   return (
     <Provider store={store}>
-      <div className="view-container">
-        <Sidebar/>
-        <div className="app-container">
-          <Header/>
-          <div className="app-wrapper">
-            <Router>
-              <Suspense fallback={Loading}>
-                <Switch>
-                  <Route exact path="/" component={Home}/>
-                  <Route path="/teams" component={Team}/>
-                  {/* <Route path="*" component={NotFound}/> */}
-                </Switch>
-              </Suspense>
-            </Router>
+      <ThemeProvider theme={applyTheme}>
+        <div className="view-container">
+          <Sidebar/>
+          <div className="app-container">
+            <Header/>
+            <div className="app-wrapper">
+              <Router>
+                <Suspense fallback={Loading}>
+                  <Switch>
+                    <Route exact path="/" component={Home}/>
+                    <Route path="/teams" component={Team}/>
+                    {/* <Route path="*" component={NotFound}/> */}
+                  </Switch>
+                </Suspense>
+              </Router>
+            </div>
           </div>
         </div>
-      </div>
+      </ThemeProvider>
     </Provider>
   );
 }
