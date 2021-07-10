@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './Styles/App.css';
 // import {currentHeight} from "./ergo-related/explorer";
 import MyErgoPage from "./my-ergo-page";
 

@@ -30,7 +30,7 @@
 
 .App-sidebar-container{
   border-right: #444261 2px solid;
-  width: 100px;
+  width: 6.5vw;
   top: 2.5vh;
   bottom: 2.5vh;
   /* height: 100vh; */
@@ -99,4 +99,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.App-header{
+  position: fixed;
+  width: 92vw;
+  height: 100px;
+  top: -43%;
+  right: 0px;
+  display: flex;
+  align-items: flex-end;
+  padding-right: 1rem;
 }

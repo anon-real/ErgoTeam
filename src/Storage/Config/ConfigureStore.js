@@ -1,11 +1,4 @@
-import {combineReducers, createStore} from 'redux';
-import reducers from '../reducers';
+import { createStore } from "redux";
+import rootReducer from "../Reducers/index";
 
-export default function ConfigureStore() {
-  return createStore(
-    combineReducers({
-      ...reducers
-    }),
-    {},
-  );
-}
+export default createStore(rootReducer);
