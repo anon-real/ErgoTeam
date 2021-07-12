@@ -1,9 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Modal from '@material-ui/core/Modal';
-import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
-import Card from '@material-ui/core/Card';
+import {Modal, InputBase , Backdrop, Fade, Card, Button} from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -37,9 +34,52 @@ export default function NewTeamModal({open,handleOpen,handleClose}) {
         }}
       >
         <Fade in={open}>
-          <Card>
-            <h2 id="transition-modal-title">New joint-spending team</h2>
-            <p id="transition-modal-description">react-transition-group animates me.</p>
+          <Card className="newteam-modal-container">
+            <h2>New joint-spending team</h2>
+            <div>
+              <form>
+                <div className="newteam-modal-input-box">
+                  <span>Name</span>
+                  <p>
+                    Others can search your team by name
+                  </p>
+                  <InputBase className="w-100" variant="outlined"/>
+                </div>
+                <div className="d-flex align-items-end newteam-modal-input-box">
+                  <div className="d-flex flex-column pl-0">
+                    <span>Required signatures</span>
+                    <p>
+                      Example: 4 in case of 4 of 10
+                    </p>
+                    <InputBase className="w-100"/>
+                  </div>
+                  <div className="d-flex align-items-center px-3">
+                    <span className="pb-1">
+                      Of
+                    </span>
+                  </div>
+                  <div className="d-flex flex-column pr-0">
+                    <span>Number of members</span>
+                    <p>
+                      Your full team members
+                    </p>
+                    <InputBase className="w-100" />
+                  </div>
+                </div>
+                <div className="newteam-modal-input-box">
+                  <span>Description</span>
+                  <p>
+                    A discription for the team
+                  </p>
+                  <textarea className="newteam-modal-description-input" name="description" cols="40" rows="5"/>
+                </div>
+                <div className="d-flex align-items-center justify-content-center">
+                  <Button variant="contained" color="primary">
+                    Create
+                  </Button>
+                </div>
+              </form>
+            </div>
           </Card>
         </Fade>
       </Modal>

@@ -1,4 +1,16 @@
 export default {
+  palette: {
+    primary: {
+      light: '',
+      main: '#1B92E8',
+      contrastText: '#fff'
+    },
+    secondary: {
+      light: '#FFAA47',
+      main: '#E88A1B',
+      contrastText: '#fff'
+    }
+  },
   overrides: {
     MuiButton:{
       root: {
@@ -60,6 +72,14 @@ export default {
         MozBoxShadow: "0 12px 30.1px 4.9px rgba(51,105,158,.1)",
         borderRadius:10,
         marginTop:20,
+      }
+    },
+    MuiInputBase:{
+      root:{
+        backgroundColor:'#282739',
+        borderRadius:5,
+        padding: '0rem 1rem',
+        color:'white'
       }
     }
   },

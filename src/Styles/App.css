@@ -116,3 +116,32 @@
 .page-table-container{
   margin-top: 1.5rem;
 }
+
+.newteam-modal-input-box{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.newteam-modal-input-box span{
+  color:#808080;
+  font-size: 1rem;
+}
+
+.newteam-modal-input-box p{
+  color:#59567B;
+  font-size: 0.75rem;
+  font-weight: medium
+}
+
+.newteam-modal-description-input{
+  min-height: 150px;
+  width: 100%;
+  border-radius: 10px;
+  background-color:#282739;
+  border-radius:5;
+  padding: 0.5rem 1rem;
+  color:white;
+  border: none;
+  resize: none;
+  outline: none;
+}
