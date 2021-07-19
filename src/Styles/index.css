@@ -10552,7 +10552,7 @@ button.bg-alternate:focus {
 }
 
 .text-primary {
-    color: #033C73 !important;
+    color: #1B92E8 !important;
 }
 
 a.text-primary:hover, a.text-primary:focus {
@@ -10560,7 +10560,7 @@ a.text-primary:hover, a.text-primary:focus {
 }
 
 .text-secondary {
-    color: #ced4da !important;
+    color: #E88A1B !important;
 }
 
 a.text-secondary:hover, a.text-secondary:focus {
@@ -10568,7 +10568,7 @@ a.text-secondary:hover, a.text-secondary:focus {
 }
 
 .text-success {
-    color: #73A839 !important;
+    color: #22DDBB !important;
 }
 
 a.text-success:hover, a.text-success:focus {
