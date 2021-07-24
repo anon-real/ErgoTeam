@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {Modal, InputBase , Backdrop, Fade, Card, Button} from '@material-ui/core'
-import NewProposal from './NewProposal'
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -17,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function NewTeamModal({open,handleOpen,handleClose}) {
+export default function NewProposal({open,handleOpen,handleClose}) {
   const classes = useStyles();
 
   return (
@@ -40,32 +39,26 @@ export default function NewTeamModal({open,handleOpen,handleClose}) {
             <div>
               <form>
                 <div className="newteam-modal-input-box">
-                  <span>Name</span>
+                  <span>Amount</span>
                   <p>
-                    Others can search your team by name
+                    How much Erg would be in Proposal
+                  </p>
+                  <div className="d-flex">
+                    <InputBase className="w-100" variant="outlined"/>
+                    <div className="newteam-modal-asset-input-box">
+                        <span>
+                            Erg
+                        </span>
+                        <i className="fas fa-angle-down"/>
+                    </div>
+                  </div>
+                </div>
+                <div className="newteam-modal-input-box">
+                  <span>Address</span>
+                  <p>
+                    Your destination wallet’s address 
                   </p>
                   <InputBase className="w-100" variant="outlined"/>
-                </div>
-                <div className="d-flex align-items-end newteam-modal-input-box">
-                  <div className="d-flex flex-column pl-0">
-                    <span>Required signatures</span>
-                    <p>
-                      Example: 4 in case of 4 of 10
-                    </p>
-                    <InputBase className="w-100"/>
-                  </div>
-                  <div className="d-flex align-items-center px-3">
-                    <span className="pb-1">
-                      Of
-                    </span>
-                  </div>
-                  <div className="d-flex flex-column pr-0">
-                    <span>Number of members</span>
-                    <p>
-                      Your full team members
-                    </p>
-                    <InputBase className="w-100" />
-                  </div>
                 </div>
                 <div className="newteam-modal-input-box">
                   <span>Description</span>
@@ -84,7 +77,6 @@ export default function NewTeamModal({open,handleOpen,handleClose}) {
           </Card>
         </Fade>
       </Modal>
-      <NewProposal/>
     </div>
   );
 }

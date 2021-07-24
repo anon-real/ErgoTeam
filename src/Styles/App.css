@@ -145,3 +145,23 @@
   resize: none;
   outline: none;
 }
+
+.newteam-modal-asset-input-box{
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 0.5rem;
+  border-radius:5px;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  background-color:#282739;
+  width:7rem
+}
+
+.newteam-modal-asset-input-box span{
+  color:white;
+  padding-bottom: 0.1rem;
+}

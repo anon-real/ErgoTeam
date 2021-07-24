@@ -25,11 +25,11 @@ export default function Sidebar(){
                                 <i className="fas fa-user-friends"/>
                             </NavLink>
                         </li>
-                        <li>
+                        {/* <li>
                             <NavLink  to="/activity" activeClassName="active">
                                 <i className="fas fa-file-alt"/>
                             </NavLink >
-                        </li>
+                        </li> */}
                         <li>
                             <NavLink  to="/setting" activeClassName="active">
                                 <i className="fas fa-cog"/>
