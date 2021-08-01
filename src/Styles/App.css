@@ -51,6 +51,19 @@
   padding: 0px;
 }
 
+.home-text-content{
+  margin-bottom: 1.5rem;
+}
+
+.home-text-content h1{
+  font-size: 2rem;
+}
+
+.home-text-content span{
+  font-size: 0.8rem;
+  color:#66657D
+}
+
 .app-sidebar-container li{
   display: flex;
   align-items: center;

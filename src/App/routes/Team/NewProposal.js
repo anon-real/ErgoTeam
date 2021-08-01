@@ -25,7 +25,7 @@ export default function NewProposal({open,handleOpen,handleClose}) {
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         className={classes.modal}
-        open={open}
+        open={false}
         onClose={handleClose}
         closeAfterTransition
         BackdropComponent={Backdrop}
@@ -33,9 +33,9 @@ export default function NewProposal({open,handleOpen,handleClose}) {
           timeout: 500,
         }}
       >
-        <Fade in={open}>
+        <Fade in={false}>
           <Card className="newteam-modal-container">
-            <h2>New joint-spending team</h2>
+            <h2>New Proposal</h2>
             <div>
               <form>
                 <div className="newteam-modal-input-box">
