@@ -7,24 +7,13 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
   },
 });
-
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
-
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
 
 export default function TeamsTable() {
   const classes = useStyles();
@@ -35,24 +24,98 @@ export default function TeamsTable() {
         <TableHead>
           <TableRow>
             <TableCell colSpan={1}></TableCell>
-            <TableCell colSpan={3} align="center">Name</TableCell>
+            <TableCell colSpan={4} align="center">Name</TableCell>
             <TableCell colSpan={1} align="center">Total members</TableCell>
-            <TableCell colSpan={3} align="center">Signature type</TableCell>
+            <TableCell colSpan={1} align="center">Signature type</TableCell>
             <TableCell colSpan={3} align="center">Status</TableCell>
+            <TableCell colSpan={1} align="center"></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.name}>
-              <TableCell colSpan={1} component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell colSpan={3} size="small" align="center">{row.calories}</TableCell>
-              <TableCell colSpan={1} align="center">{row.fat}</TableCell>
-              <TableCell colSpan={3} align="center">{row.carbs}</TableCell>
-              <TableCell colSpan={3} align="center">{row.protein}</TableCell>
-            </TableRow>
-          ))}
+        <TableRow>
+          <TableCell colSpan={1} component="th" scope="row">
+            1
+          </TableCell>
+          <TableCell colSpan={4} size="small" align="center">Team1</TableCell>
+          <TableCell colSpan={1} align="center">10</TableCell>
+          <TableCell colSpan={1} align="center">6 of 10</TableCell>
+          <TableCell colSpan={3} align="center">
+            {(true)?
+              <i className="fas fa-check text-success"/>
+              :
+              <div>
+                <i className="fas fa-spinner text-primary"/>
+                <span className="text-primary ml-2">
+                  team is being created
+                </span>
+              </div>
+            }   
+          </TableCell>
+          <TableCell colSpan={1} align="center">
+            <Button size="small" style={{color:'#C0C0C0',borderColor:'#C0C0C0',borderRadius:10}} variant="outlined">
+                <i className="fas fa-plus"/>
+                <span className="mx-2">
+                  View proposals
+                </span>
+            </Button>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell colSpan={1} component="th" scope="row">
+            2
+          </TableCell>
+          <TableCell colSpan={4} size="small" align="center">Team2</TableCell>
+          <TableCell colSpan={1} align="center">10</TableCell>
+          <TableCell colSpan={1} align="center">6 of 10</TableCell>
+          <TableCell colSpan={3} align="center">
+            {(true)?
+              <i className="fas fa-check text-success"/>
+              :
+              <div>
+                <i className="fas fa-spinner text-primary"/>
+                <span className="text-primary ml-2">
+                  team is being created
+                </span>
+              </div>
+            }   
+          </TableCell>
+          <TableCell colSpan={1} align="center">
+            <Button  size="small" style={{color:'#C0C0C0',borderColor:'#C0C0C0',borderRadius:10}} variant="outlined">
+                <i className="fas fa-plus"/>
+                <span className="mx-2">
+                  View proposals
+                </span>
+            </Button>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell colSpan={1} component="th" scope="row">
+            3
+          </TableCell>
+          <TableCell colSpan={4} size="small" align="center">Team3</TableCell>
+          <TableCell colSpan={1} align="center">10</TableCell>
+          <TableCell colSpan={1} align="center">6 of 10</TableCell>
+          <TableCell colSpan={3} align="center">
+            {(true)?
+              <i className="fas fa-check text-success"/>
+              :
+              <div>
+                <i className="fas fa-spinner text-primary"/>
+                <span className="text-primary ml-2">
+                  team is being created
+                </span>
+              </div>
+            }   
+          </TableCell>
+          <TableCell colSpan={1} align="center">
+            <Button  size="small" style={{color:'#C0C0C0',borderColor:'#C0C0C0',borderRadius:10}} variant="outlined">
+                <i className="fas fa-plus"/>
+                <span className="mx-2">
+                  View proposals
+                </span>
+            </Button>
+          </TableCell>
+        </TableRow>
         </TableBody>
       </Table>
     </TableContainer>
