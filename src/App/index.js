@@ -4,14 +4,14 @@ import '../Styles/App.css';
 import {Provider} from 'react-redux'
 import Sidebar from '../Components/Sidebar';
 import Header from '../Components/Header';
-import store from "../Storage/Config/ConfigureStore";
+import configureStore, { history } from '../Storage/store';
 import Loading from '../Components/Loading'
 import {ThemeProvider} from '@material-ui/styles';
 import {createMuiTheme} from '@material-ui/core/styles';
 import DarkTheme from '../Styles/MaterialThemes/DarkTheme'
 
 const applyTheme = createMuiTheme(DarkTheme);
-
+export const store = configureStore();
 const Home = lazy(() => import('./routes/Home'));
 const Team = lazy(() => import('./routes/Team'));
 
