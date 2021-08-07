@@ -8,7 +8,10 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
-
+import {useDispatch} from 'react-redux'
+import {
+  setOpenProposal
+}from '../../../Storage/actions'
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
@@ -17,6 +20,7 @@ const useStyles = makeStyles({
 
 export default function TeamsTable() {
   const classes = useStyles();
+  const dispatch = useDispatch();
 
   return (
     <TableContainer component={Paper}>
@@ -52,7 +56,7 @@ export default function TeamsTable() {
             }   
           </TableCell>
           <TableCell colSpan={1} align="center">
-            <Button size="small" style={{color:'#C0C0C0',borderColor:'#C0C0C0',borderRadius:10}} variant="outlined">
+            <Button onClick={()=>dispatch(setOpenProposal(true))} size="small" style={{color:'#C0C0C0',borderColor:'#C0C0C0',borderRadius:10}} variant="outlined">
                 <i className="fas fa-plus"/>
                 <span className="mx-2">
                   View proposals

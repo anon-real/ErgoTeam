@@ -1,4 +1,4 @@
-import { FETCH_ERROR, FETCH_START, FETCH_SUCCESS, SET_ADDONS_MENU, SET_DETAILS_MENU, SET_LANGUAGE, SHOW_ALERT} from 'Constant/ActionTypes';
+import { FETCH_ERROR, FETCH_START, FETCH_SUCCESS, OPEN_PROPOSAL} from '../../Constant/ActionTypes';
 
 export const fetchSuccess = message => {
   return dispatch => {
@@ -25,38 +25,11 @@ export const fetchStart = () => {
   };
 };
 
-export const setAddonsSideMenu = status => {
+export const setOpenProposal = status => {
   return dispatch => {
     dispatch({
-      type: SET_ADDONS_MENU,
+      type: OPEN_PROPOSAL,
       data: status,
     });
   };
 };
-
-export const setDetailsSideMenu = status => {
-  return dispatch => {
-    dispatch({
-      type: SET_DETAILS_MENU,
-      data: status,
-    });
-  };
-};
-
-export const setLanguage= language => {
-  return dispatch => {
-    dispatch({
-      type: SET_LANGUAGE,
-      data: language,
-    });
-  };
-};
-
-export const setShowAlert = status =>{
-  return dispatch => {
-    dispatch({
-      type: SHOW_ALERT,
-      data: status
-    });
-  };
-}

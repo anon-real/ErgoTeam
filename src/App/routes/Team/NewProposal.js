@@ -1,7 +1,10 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {Modal, InputBase , Backdrop, Fade, Card, Button} from '@material-ui/core'
-
+import {useSelector, useDispatch} from 'react-redux'
+import {
+  setOpenProposal
+}from '../../../Storage/actions'
 const useStyles = makeStyles((theme) => ({
   modal: {
     display: 'flex',
@@ -18,6 +21,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function NewProposal({open,handleOpen,handleClose}) {
   const classes = useStyles();
+  const openProposal = useSelector(state => state.settings.openProposal) 
+  const dispatch = useDispatch();
 
   return (
     <div>
@@ -25,15 +30,15 @@ export default function NewProposal({open,handleOpen,handleClose}) {
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         className={classes.modal}
-        open={false}
-        onClose={handleClose}
+        open={openProposal}
+        onClose={()=>dispatch(setOpenProposal(false))}
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
           timeout: 500,
         }}
       >
-        <Fade in={false}>
+        <Fade in={openProposal}>
           <Card className="newteam-modal-container">
             <h2>New Proposal</h2>
             <div>
