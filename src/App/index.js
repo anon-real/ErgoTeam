@@ -9,6 +9,7 @@ import Loading from '../Components/Loading'
 import {ThemeProvider} from '@material-ui/styles';
 import {createMuiTheme} from '@material-ui/core/styles';
 import DarkTheme from '../Styles/MaterialThemes/DarkTheme'
+import WalletModal from '../Components/WalletModal'
 
 const applyTheme = createMuiTheme(DarkTheme);
 export const store = configureStore();
@@ -33,6 +34,7 @@ function App() {
                   </Switch>
                 </Suspense>
             </div>
+            <WalletModal/>
           </div>
         </div>
         </Router>
