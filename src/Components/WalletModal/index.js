@@ -1,7 +1,12 @@
 import React from 'react'
 import {Modal, Backdrop, Fade, Card, InputBase, Button} from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
-
+import{
+    useSelector, useDispatch
+}from 'react-redux'
+import{
+    setOpenWallet
+}from '../../Storage/actions'
 const useStyles = makeStyles((theme) => ({
     modal: {
       display: 'flex',
@@ -19,21 +24,22 @@ const useStyles = makeStyles((theme) => ({
 
 export default function WalletModal(){
     const classes = useStyles();
-
+    const openWallet = useSelector(state => state.settings.openWallet) 
+    const dispatch = useDispatch()
     return(
         <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         className={classes.modal}
-        open={true}
-        // onClose={()=>dispatch(setOpenProposal(false))}
+        open={openWallet}
+        onClose={()=>dispatch(setOpenWallet(false))}
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
           timeout: 500,
         }}
       >
-        <Fade in={true}>
+        <Fade in={openWallet}>
           <Card className="newteam-modal-container">
               <div className="p-3" style={{maxWidth:640}}>
                 <h2 className="text-secondary font-weight-bold pb-3">
