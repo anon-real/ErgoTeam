@@ -11,7 +11,7 @@ import Button from '@material-ui/core/Button';
 import {useDispatch} from 'react-redux'
 import {
   setOpenProposal
-}from '../../../Storage/actions'
+}from '../../../Storage/actions/Settings'
 const useStyles = makeStyles({
   table: {
     minWidth: 650,

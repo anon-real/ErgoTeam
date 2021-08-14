@@ -4,7 +4,7 @@ import {withStyles} from '@material-ui/core/styles';
 import { useDispatch } from 'react-redux';
 import{
     setOpenWallet
-}from '../../Storage/actions'
+}from '../../Storage/actions/Settings'
 const WalletButton = withStyles((theme) => ({
     root: {
       color: 'white',

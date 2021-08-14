@@ -4,7 +4,7 @@ import {Modal, InputBase , Backdrop, Fade, Card, Button} from '@material-ui/core
 import {useSelector, useDispatch} from 'react-redux'
 import {
   setOpenProposal
-}from '../../../Storage/actions'
+}from '../../../Storage/actions/Settings'
 const useStyles = makeStyles((theme) => ({
   modal: {
     display: 'flex',
