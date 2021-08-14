@@ -6,7 +6,7 @@ import{
 }from 'react-redux'
 import{
     setOpenWallet
-}from '../../Storage/actions'
+}from '../../Storage/actions/Settings'
 const useStyles = makeStyles((theme) => ({
     modal: {
       display: 'flex',
