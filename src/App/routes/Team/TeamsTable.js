@@ -10,8 +10,10 @@ import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import {useDispatch} from 'react-redux'
 import {
-  setOpenProposal
+  setOpenProposalList
 }from '../../../Storage/actions/Settings'
+import ProposalListModal from '../../../Components/ProposalListModal'
+
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
@@ -23,6 +25,7 @@ export default function TeamsTable() {
   const dispatch = useDispatch();
 
   return (
+    <>
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
@@ -56,8 +59,8 @@ export default function TeamsTable() {
             }   
           </TableCell>
           <TableCell colSpan={1} align="center">
-            <Button onClick={()=>dispatch(setOpenProposal(true))} size="small" style={{color:'#C0C0C0',borderColor:'#C0C0C0',borderRadius:10}} variant="outlined">
-                <i className="fas fa-plus"/>
+            <Button onClick={()=>dispatch(setOpenProposalList(true))} size="small" style={{color:'#C0C0C0',borderColor:'#C0C0C0',borderRadius:10}} variant="outlined">
+                <i className="far fa-eye"/>
                 <span className="mx-2">
                   View proposals
                 </span>
@@ -85,7 +88,7 @@ export default function TeamsTable() {
           </TableCell>
           <TableCell colSpan={1} align="center">
             <Button  size="small" style={{color:'#C0C0C0',borderColor:'#C0C0C0',borderRadius:10}} variant="outlined">
-                <i className="fas fa-plus"/>
+                <i className="far fa-eye"/>
                 <span className="mx-2">
                   View proposals
                 </span>
@@ -113,7 +116,7 @@ export default function TeamsTable() {
           </TableCell>
           <TableCell colSpan={1} align="center">
             <Button  size="small" style={{color:'#C0C0C0',borderColor:'#C0C0C0',borderRadius:10}} variant="outlined">
-                <i className="fas fa-plus"/>
+                <i className="far fa-eye"/>
                 <span className="mx-2">
                   View proposals
                 </span>
@@ -123,5 +126,7 @@ export default function TeamsTable() {
         </TableBody>
       </Table>
     </TableContainer>
+    <ProposalListModal/>
+    </>
   );
 }

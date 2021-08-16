@@ -1,11 +1,12 @@
-import { FETCH_ERROR, FETCH_START, FETCH_SUCCESS, OPEN_PROPOSAL, OPEN_WALLET} from '../../Constant/ActionTypes';
+import { FETCH_ERROR, FETCH_START, FETCH_SUCCESS, OPEN_CREATE_PROPOSAL, OPEN_WALLET, OPEN_PROPOSALS_LIST} from '../../Constant/ActionTypes';
 
 const INIT_STATE = {
   initialURL: '/',
   error: '',
   message: '',
   loading: false,
-  openProposal:false,
+  openCreateProposal:false,
+  openProposalsList:{status:false,data:null},
   openWallet:false
 };
 
@@ -20,8 +21,11 @@ export default (state = INIT_STATE, action) => {
     case FETCH_ERROR: {
       return { ...state, loading: false, message: '', error: action.payload };
     }
-    case OPEN_PROPOSAL: {
-      return {...state, openProposal:action.data}
+    case OPEN_CREATE_PROPOSAL: {
+      return {...state, openCreateProposal:action.data}
+    }
+    case OPEN_PROPOSALS_LIST: {
+      return {...state, openProposalsList:action.data}
     }
     case OPEN_WALLET: {
       return {...state, openWallet:action.data}

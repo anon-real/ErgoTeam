@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import {Modal, InputBase , Backdrop, Fade, Card, Button} from '@material-ui/core'
+import {Modal, InputBase , Backdrop, Fade, Card, Button, Menu, MenuItem} from '@material-ui/core'
 import {useSelector, useDispatch} from 'react-redux'
 import {
-  setOpenProposal
-}from '../../../Storage/actions/Settings'
+  setOpenCreateProposal
+}from '../../Storage/actions/Settings'
+
+
 const useStyles = makeStyles((theme) => ({
   modal: {
     display: 'flex',
@@ -19,10 +21,40 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function NewProposal({open,handleOpen,handleClose}) {
+export default function NewProposalModal() {
   const classes = useStyles();
-  const openProposal = useSelector(state => state.settings.openProposal) 
+  const openCreateProposal = useSelector(state => state.settings.openCreateProposal) 
   const dispatch = useDispatch();
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [currency,setCurrency] = useState('Erg')
+
+  const handleOpenMenu = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleClickMenuItem = (value) => {
+    setCurrency(value);
+    handleMenuClose();
+  }
+
+  function NewProposalMenu(){
+    return(
+      <Menu
+        id="simple-menu"
+        anchorEl={anchorEl}
+        keepMounted
+        open={Boolean(anchorEl)}
+        onClose={handleMenuClose}
+      >
+        <MenuItem onClick={()=>handleClickMenuItem('Erg')}>Erg</MenuItem>
+        <MenuItem onClick={()=>handleClickMenuItem('SigmaUSD')}>SigmaUSD</MenuItem>
+      </Menu>
+    )
+  }
 
   return (
     <div>
@@ -30,15 +62,15 @@ export default function NewProposal({open,handleOpen,handleClose}) {
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         className={classes.modal}
-        open={openProposal}
-        onClose={()=>dispatch(setOpenProposal(false))}
+        open={openCreateProposal}
+        onClose={()=>dispatch(setOpenCreateProposal(false))}
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
           timeout: 500,
         }}
       >
-        <Fade in={openProposal}>
+        <Fade in={openCreateProposal}>
           <Card className="newteam-modal-container">
             <h2>New Proposal</h2>
             <div>
@@ -50,12 +82,13 @@ export default function NewProposal({open,handleOpen,handleClose}) {
                   </p>
                   <div className="d-flex">
                     <InputBase className="w-100" variant="outlined"/>
-                    <div className="newteam-modal-asset-input-box">
+                    <div className="newteam-modal-asset-input-box" onClick={handleOpenMenu}>
                         <span>
-                            Erg
+                            {currency}
                         </span>
                         <i className="fas fa-angle-down"/>
                     </div>
+                    <NewProposalMenu/>
                   </div>
                 </div>
                 <div className="newteam-modal-input-box">

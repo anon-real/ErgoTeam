@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {Modal, InputBase , Backdrop, Fade, Card, Button} from '@material-ui/core'
-import NewProposal from './NewProposal'
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -84,7 +83,6 @@ export default function NewTeamModal({open,handleOpen,handleClose}) {
           </Card>
         </Fade>
       </Modal>
-      <NewProposal/>
     </div>
   );
 }

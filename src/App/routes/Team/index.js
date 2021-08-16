@@ -2,7 +2,7 @@ import React from 'react'
 import {Button} from '@material-ui/core'
 import TeamsTable from './TeamsTable'
 import useModal from '../../../CustomHooks/useModal'
-import NewTeamModal from './NewTeamModal';
+import NewTeamModal from '../../../Components/NewTeamModal';
 
 export default function Team(){
     const open = useModal(false);

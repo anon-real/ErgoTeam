@@ -1,4 +1,4 @@
-import { FETCH_ERROR, FETCH_START, FETCH_SUCCESS, OPEN_PROPOSAL, OPEN_WALLET} from '../../Constant/ActionTypes';
+import { FETCH_ERROR, FETCH_START, FETCH_SUCCESS, OPEN_CREATE_PROPOSAL, OPEN_PROPOSALS_LIST, OPEN_WALLET} from '../../Constant/ActionTypes';
 
 export const fetchSuccess = message => {
   return dispatch => {
@@ -25,11 +25,20 @@ export const fetchStart = () => {
   };
 };
 
-export const setOpenProposal = status => {
+export const setOpenCreateProposal = status => {
   return dispatch => {
     dispatch({
-      type: OPEN_PROPOSAL,
+      type: OPEN_CREATE_PROPOSAL,
       data: status,
+    });
+  };
+};
+
+export const setOpenProposalList = status => {
+  return dispatch => {
+    dispatch({
+      type: OPEN_PROPOSALS_LIST,
+      data: {status:status,data:null},
     });
   };
 };

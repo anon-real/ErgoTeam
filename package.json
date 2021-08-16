@@ -1,6 +1,7 @@
 {
   "name": "ergoteam",
   "version": "0.1.0",
+  "homepage": "./",
   "private": true,
   "dependencies": {
     "@coinbarn/ergo-ts": "^0.3.0",
