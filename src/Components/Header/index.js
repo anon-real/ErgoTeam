@@ -1,10 +1,12 @@
-import React from 'react'
-import {Button, IconButton} from '@material-ui/core'
+import React,{useState} from 'react'
+import {Button} from '@material-ui/core'
 import {withStyles} from '@material-ui/core/styles';
 import { useDispatch } from 'react-redux';
 import{
     setOpenWallet
 }from '../../Storage/actions/Settings'
+import NotificationCenter from './NotificationCenter'
+
 const WalletButton = withStyles((theme) => ({
     root: {
       color: 'white',
@@ -18,13 +20,12 @@ const WalletButton = withStyles((theme) => ({
 }))(Button);
 
 export default function Header(){
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+
     return(
         <header className="app-header">
-            <div>
-                <IconButton aria-label="notification">
-                    <i className="mx-3 text-white fas fa-bell"/>
-                </IconButton>
+            <div className="d-flex">
+                <NotificationCenter/>
                 <WalletButton color="primary" onClick={()=>dispatch(setOpenWallet(true))}>
                     <i className="mx-1 fas fa-wallet"/>
                     <span className="mx-2">

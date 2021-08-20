@@ -189,3 +189,14 @@
   color: #59567B;
   font-size:0.85rem;
 }
+
+.notification-time-text{
+  color: #68658C;
+  font-size: 14px;
+}
+
+.notification-devider{
+  height: 2px;
+  background-color: #59567B;
+  width: 80px;
+}
