@@ -110,6 +110,7 @@
   border-radius:100%;
   width: 3.5vw;
   height: 3.5vw;
+  cursor: pointer;
 }
 
 .app-sidebar-aboutus i{
@@ -199,4 +200,10 @@
   height: 2px;
   background-color: #59567B;
   width: 80px;
+}
+
+@Media(max-width: 768px){
+  .app-sidebar-container{
+    display: none;
+  }
 }

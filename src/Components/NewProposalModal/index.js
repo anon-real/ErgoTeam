@@ -4,7 +4,7 @@ import {Modal, InputBase , Backdrop, Fade, Card, Button, Menu, MenuItem} from '@
 import {useSelector, useDispatch} from 'react-redux'
 import {
   setOpenCreateProposal
-}from '../../Storage/actions/Settings'
+}from 'Storage/actions/Settings'
 
 
 const useStyles = makeStyles((theme) => ({

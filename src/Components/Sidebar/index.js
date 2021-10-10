@@ -1,8 +1,8 @@
 import React from 'react';
-import Logo from '../../Assets/ErgoLogo.png';
-import IconBulider from '../../Utils/IconBuilder'
+import Logo from 'Assets/ErgoLogo.png';
 import CSSTransitionGroup from 'react-addons-css-transition-group';
 import {NavLink} from 'react-router-dom'
+import {IconButton} from '@material-ui/core'
 
 export default function Sidebar(){
     return(
@@ -37,9 +37,11 @@ export default function Sidebar(){
                         </li>
                     </ul>
                 </CSSTransitionGroup>
-            <div className="app-sidebar-aboutus">
-                <i className="fas fa-question"/>
-            </div>
+                <IconButton aria-label="about-us">
+                    <div className="app-sidebar-aboutus">
+                        <i className="fas fa-question"/>
+                    </div>
+                </IconButton>
         </div>
     )
 }
