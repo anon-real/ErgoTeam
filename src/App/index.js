@@ -10,6 +10,7 @@ import {ThemeProvider} from '@material-ui/styles';
 import {createMuiTheme} from '@material-ui/core/styles';
 import DarkTheme from '../Styles/MaterialThemes/DarkTheme'
 import WalletModal from '../Components/WalletModal'
+import { issueTeamToken } from '../ergo-related/action'
 
 const applyTheme = createMuiTheme(DarkTheme);
 export const store = configureStore();
@@ -17,6 +18,8 @@ const Home = lazy(() => import('./routes/Home'));
 const Team = lazy(() => import('./routes/Team'));
 
 function App() {
+  issueTeamToken('new token', 4, 10, 'some description!')
+
   return (
     <Provider store={store}>
       <ThemeProvider theme={applyTheme}>

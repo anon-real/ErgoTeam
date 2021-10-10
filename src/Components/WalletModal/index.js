@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Modal, Backdrop, Fade, Card, InputBase, Button} from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
 import{
@@ -26,6 +26,16 @@ export default function WalletModal(){
     const classes = useStyles();
     const openWallet = useSelector(state => state.settings.openWallet) 
     const dispatch = useDispatch()
+    const [userAddress,setUserAddress] = useState();
+    const saveWallet = () => {
+      localStorage.setItem(
+          'wallet',
+          JSON.stringify({
+            address: userAddress,
+          })
+      );
+    }
+
     return(
         <Modal
         aria-labelledby="transition-modal-title"
@@ -58,13 +68,13 @@ export default function WalletModal(){
                     <span className="wallet-address-subtitle">
                         Your assets will be sent back to this address in case of any failures
                     </span>
-                    <InputBase className="w-100 mt-3" variant="outlined"/>
+                    <InputBase className="w-100 mt-3" variant="outlined" value={userAddress} onChange={(e)=>setUserAddress(e.target.value)}/>
                 </div>
                 <div className="d-flex align-items-center justify-content-center mt-3">
                     <Button variant="contained" color="secondary" className="mr-2">
                         Cancel
                     </Button>
-                    <Button variant="contained" color="primary" className="ml-2">
+                    <Button variant="contained" color="primary" className="ml-2" onClick={saveWallet}>
                         Save
                     </Button>
                 </div>
