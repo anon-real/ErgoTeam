@@ -16935,3 +16935,7 @@ a.badge-alternate:hover, a.badge-alternate:focus {
     margin-left: auto;
     margin-right: auto;
 }
+
+.pointer{
+    cursor:pointer;
+}
